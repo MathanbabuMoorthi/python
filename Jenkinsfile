@@ -7,5 +7,10 @@ pipeline{
                 bat 'python name.py'
             }
         }
+        stage('Result'){
+            steps{
+                echo 'The last build was successful'
+            }
+        }
     }
 }

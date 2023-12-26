@@ -11,9 +11,9 @@ pipeline{
                 echo 'The last build was successful'
             }
         }
-        stage('checking'){
+        stage('Testing'){
             steps{
-                echo 'hii'
+               sh 'pytest name.py'
             }
         }
     }

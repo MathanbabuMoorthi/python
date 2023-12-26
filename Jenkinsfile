@@ -21,10 +21,7 @@ pipeline {
         }
         post {
             always {
-                emailext(
-                    subject: 'Build Status',
-                    body: 'The build status is succesful.',
-                    to: 'mr.mathan5555@gmail.com'
+                emailext body: 'The build status is success', subject: 'Build Status', to: 'mr.mathan5555@gmail.com'
                 )
             }
         }

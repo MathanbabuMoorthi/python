@@ -19,5 +19,14 @@ pipeline {
                 bat 'python name.py'
             }
         }
+        post {
+            always {
+                emailext(
+                    subject: 'Build Status',
+                    body: 'The build status is succesful.',
+                    to: 'mr.mathan5555@gmail.com'
+                )
+            }
+        }
     }
 }

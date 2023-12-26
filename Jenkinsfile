@@ -24,7 +24,7 @@ pipeline {
                 emailext(
                     subject: 'Build Status',
                     body: 'The build status is succesful.',
-                    recipientProviders: [mathan7112@gmail.com],
+                    recipientProviders:[ requestor(mathan7112@gmail.com)],
                     attachLog: true,
                 )
             }

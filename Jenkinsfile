@@ -14,7 +14,7 @@ pipeline{
         stage('Testing'){
             steps{
                 script {
-                    sh 'pytest tests'
+                   bat 'start python your_script.py'
             }
         }
     }

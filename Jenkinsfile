@@ -13,8 +13,10 @@ pipeline{
         }
         stage('Testing'){
             steps{
-               bat 'pytest'
+                script {
+                    sh 'pytest tests'
             }
         }
     }
+}
 }

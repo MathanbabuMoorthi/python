@@ -12,5 +12,10 @@ pipeline{
                 echo 'The last build was successful'
             }
         }
+        stage('checking'){
+            steps{
+                echo 'hii'
+            }
+        }
     }
 }

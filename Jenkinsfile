@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Testing'){
             steps{
-                   bat 'start python your_script.py'
+                   bat 'start pytest --junitxml=test-reports/results.xml'
             }
         }
 } 

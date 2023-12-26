@@ -19,15 +19,5 @@ pipeline {
                 bat 'python name.py'
             }
         }
-        post {
-            always {
-                emailext(
-                    subject: 'Build Status',
-                    body: 'The build status is succesful.',
-                    recipientProviders:[ requestor(mathan7112@gmail.com)],
-                    attachLog: true,
-                )
-            }
-        }
     }
 }

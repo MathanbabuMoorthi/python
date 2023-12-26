@@ -13,10 +13,12 @@ pipeline{
         }
         stage('Testing'){
             steps{
-                script {
                    bat 'start python your_script.py'
             }
         }
+} post {
+    always {
+        junit 'test-reports/**/*.xml'
     }
-}
+ }
 }

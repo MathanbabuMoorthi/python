@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        WORKSPACE = 'workspace'
         VENV = 'venv'
     }
 
@@ -10,8 +9,6 @@ pipeline {
         stage('Install Requirements') {
             steps {
                 script {
-                    bat "mkdir ${WORKSPACE}"
-                    currentBuild.workspace = "${WORKSPACE}"
                     bat "python -m venv ${VENV}"
                     bat ".\\${VENV}\\Scripts\\activate"
                     bat "pip install -r requirements.txt"

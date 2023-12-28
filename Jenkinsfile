@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat "pytest mytests\\test_sets.py --junitxml=TEST-junit.xml"
+                    bat "pytest test_sets.py --junitxml=TEST-junit.xml"
                 }
             }
         }

@@ -7,12 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Workspace') {
-            steps {
-                cleanWs()
-            }
-        }
-
         stage('Install Requirements') {
             steps {
                 script {

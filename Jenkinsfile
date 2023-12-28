@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat ".\\${VENV}\\Scripts\\activate && pytest mytests//test_sets.py --junitxml=TEST-junit.xml"
+                    bat "pytest mytests/test_sets.py --junitxml=TEST-junit.xml"
                 }
             }
         }

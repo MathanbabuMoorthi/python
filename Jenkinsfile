@@ -9,6 +9,7 @@ pipeline {
         stage('Install Requirements') {
             steps {
                 script {
+                    bat 'pip install --upgrade --force-reinstall pytest'
                     bat "python -m venv ${VENV}"
                     bat ".\\${VENV}\\Scripts\\activate"
                     bat "pip install -r requirements.txt"
@@ -19,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat "pytest test_sets.py --junitxml=TEST-junit.xml"
+                    bat "pytest mytests --junitxml=TEST-junit.xml"
                 }
             }
         }

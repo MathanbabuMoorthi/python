@@ -10,6 +10,7 @@ pipeline {
             steps {
                 script {
                     bat 'pip install --upgrade --force-reinstall pytest'
+                    bat 'pip install --upgrade --force-reinstall py'
                     bat "python -m venv ${VENV}"
                     bat ".\\${VENV}\\Scripts\\activate"
                     bat "pip install -r requirements.txt"

@@ -28,7 +28,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat ".\\${VENV}\\Scripts\\activate && pytest --junitxml=TEST-junit.xml"
+                    bat ".\\${VENV}\\Scripts\\activate && pytest mytests --junitxml=TEST-junit.xml"
                 }
             }
         }

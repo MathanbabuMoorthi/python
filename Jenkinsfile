@@ -3,12 +3,21 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                bat 'python3 ops.py'
+                bat 'python ops.py'
             }
         }
-        stage(test){
+        stage('test'){
             steps{
-                bat 'python3 -m pytest'
+                script{
+                    bat 'python -m unittest discover -p "*test_ops.py"'
+                }
+            }
+        }
+    }
+    post{
+        always{
+            script{
+                junit 'test_result.xml'
             }
         }
     }

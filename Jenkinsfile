@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                bat 'python ops.p'
+                bat 'python ops.py'
             }
         }
         stage('test'){

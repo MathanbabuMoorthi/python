@@ -13,6 +13,11 @@ pipeline{
                 }
             }
         }
+        stage('Result'){
+            steps{
+                echo "The build was a success"
+            }
+        }
     }
     post{
         always{
